@@ -14,6 +14,11 @@ screen.listen()
 welcome_screen = WelcomeScreen()
 
 def run_game():
+    global is_game_running
+    if is_game_running: return
+
+    is_game_running = True
+
     welcome_screen.clear()
     player = Player()
     car_manager = CarManager()
@@ -44,7 +49,7 @@ def run_game():
             player.player_next_level()
             scoreboard.new_level()
 
-
+is_game_running = False
 screen.onkey(run_game, 'Return')
 
 screen.exitonclick()
