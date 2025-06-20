@@ -7,6 +7,7 @@ from welcomescreen import WelcomeScreen
 
 screen = Screen()
 screen.setup(width=600, height=600)
+screen.bgcolor('beige')
 screen.tracer(0)
 screen.listen()
 
@@ -34,7 +35,7 @@ def run_game():
         for car in car_manager.cars:
             car_manager.move_car(car, scoreboard.level)
 
-            if player.distance(car) < 28:
+            if player.distance(car) < 26:
                 game_is_on = False
                 scoreboard.game_over()
                 break
