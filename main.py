@@ -27,6 +27,10 @@ def run_game():
             car_manager.new_car()
         scoreboard.count += 1
 
+        if scoreboard.level > 6:
+            game_is_on = False
+            welcome_screen.win_game()
+
         for car in car_manager.cars:
             car_manager.move_car(car, scoreboard.level)
 
